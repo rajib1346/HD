@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... other tags ... -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- ... other styles ... -->
+</head>
+<style>
+
+    .result-box {
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+            50% {font-weight: bold;}
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            margin: 20px auto 0 auto;
+    }
+
+    .h-text{
+        font-size: 16px;
+    }
+
+    .myclass{
+        width: 90%;
+        margin: auto;
+        font-size: 12px;
+    }
+
+    .btns{
+        width: 92%;
+    }
+
+    .btn{
+        width: 100px;
+    }
+
+    .cr{
+        font-size: 20px;
+    }
+    
+    .mtab{
+        width:
+    }
+    
+    h2{
+       font-weight: bold;  
+    }
+
+</style>
+<body>
+
+    <section class="text-center bg-primary">
+        <h2 class="text-light p-3">Kidney Disease Prediction Report</h2>
+    </section>
+
+   <div class="myclass">
+    <div class="row">
+        <div class="col-7 ">
+            <table class="table">
+                <tbody class="">
+                    <div class="">
+                        <tr class="row">
+                            <th scope="row" class="bg-primary text-light col-1 ms-2 h-text">Name:</th>
+                            <td class="col-7">{{ name }}</td>
+                            
+                        </tr>
+                        <tr class="row">
+                            <th scope="row" class="bg-primary text-light col-1 ms-2  h-text">Age:</th>
+                            <td class="col-2">{{ age }}</td>
+                            <th scope="row" class="bg-primary text-light col-1  h-text">Sex:</th>
+                            <td class="col-2">{{ sex }}</td>
+                            <th scope="row" class="bg-primary text-light col-2  h-text">Blood Group:</th>
+                            <td class="col-3">{{ bg }}</td>
+                        </tr>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+                <div class="result-box" style="background-color: {{ color }};">
+                {{ status }}
+        </div>
+    </div>
+   
+    <table class="table border-dark">
+        <tbody>
+            <tr class="row mtab">
+                <th scope="row" class="bg-dark-subtle col-2 ">Blood Pressure:</th>
+                    <td class="col-2 ">{{ bp }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Specific Gravity:</th>
+                    <td class="col-2">{{ sg }}</td>
+                <th scope="row" class="bg-dark-subtle  col-2">Albumin:</th>
+                    <td class=" col-2">{{ al }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2 ">Suger:</th>
+                    <td class="col-2 ">{{ su }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Red Blood Cells:</th>
+                    <td class="col-2">{{ rbc }}</td>
+                <th scope="row" class="bg-dark-subtle  col-2">Pus cell:</th>
+                    <td class=" col-2">{{ pc }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle  col-2">Pus Cell Clumps:</th>
+                    <td class="col-2">{{ pcc }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Bacteria:</th>
+                    <td class="col-2">{{ ba }}</td>
+                    <th scope="row" class="bg-dark-subtle col-2">Blood Glucose Random:</th>
+                    <td class="col-2">{{ bgr }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2">Blood Urea:</th>
+                    <td class="col-2">{{ bu }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Serum Creatine:</th>
+                    <td class="col-2">{{ su }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Sodium:</th>
+                    <td class="col-2">{{ sod }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2">Potassium:</th>
+                    <td class="col-2">{{ pot }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Hemoglobin:</th>
+                    <td class="col-2">{{ hemo }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">White Blood Cell Count:</th>
+                    <td class="col-2">{{ wc }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2">Hypertension:</th>
+                    <td class="col-2">{{ htn }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Diabetes Mellitus:</th>
+                    <td class="col-2">{{ dm }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Coronary Artery Diseases:</th>
+                    <td class="col-2">{{ cad }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2">Diabetes Mellitus:</th>
+                    <td class="col-2">{{ dm }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Coronary Artery Diseases:</th>
+                    <td class="col-2">{{ cad }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Appetite:</th>
+                    <td class="col-2">{{ appet }}</td>
+            </tr>
+            <tr class="row">
+                <th scope="row" class="bg-dark-subtle col-2">Pedal Edema:</th>
+                    <td class="col-2">{{ pe }}</td>
+                <th scope="row" class="bg-dark-subtle col-2">Anemia:</th>
+                    <td class="col-2">{{ ane }}</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+
+   <div class="d-flex m-auto btns">
+    <button class="btn  me-auto p-2 bg-success text-light" type="button"><a href="./index.html" class="nav-link"><- Go Back</a></button>
+    <button class="btn    bg-success text-light  " type="button" onclick="window.print()">Print</button>
+  </div>
+
+         <div class=" text-center mt-5 " style="width: 75% ; margin: auto;">
+             <p class="text-dark cr">© copyright || Rajib Kumar Harder </p>
+           </div>
+
+
+</body>
+</html>
