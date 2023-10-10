@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from flask import Flask, request, render_template
 import pickle
+import time
 
 #Create an app object using the Flask class. 
 app = Flask(__name__)
@@ -55,9 +56,11 @@ def predict():
     pe = float(request.form['pe'])
     ane = float(request.form['ane'])
 
-
-    prediction = model.predict([[age,bp,sg,al,su,bgr,bu,sc,sod,pot,hemo,rbc,pc,pcc,ba,wc,htn,dm,cad,appet,pe,ane]])  # features Must be in the form [[a, b]]
-
+    start_time = time.time()
+    prediction = model.predict([[age,bp,sg,al,su,bgr,bu,sc,sod,pot,hemo,rbc,pc,pcc,ba,wc,htn,dm,cad,appet,pe,ane]])  
+    end_time = time.time()
+    testing_time = end_time - start_time
+    
     if rbc == 0:
         rbc = "Abnormal"
     else:
@@ -118,7 +121,7 @@ def predict():
         color = 'red'
         status = 'Kidney Disease Positive'
 
-    return render_template('result.html', name=name, bg=bg, sex=sex, age=age,bp=bp, result=result, color=color, status=status, sg=sg,al=al,su=su,bgr=bgr,bu=bu,sc=sc,sod=sod,pot=pot,hemo=hemo,rbc=rbc,pc=pc,pcc=pcc,ba=ba,wc=wc,htn=htn,dm=dm,cad=cad,appet=appet,pe=pe,ane=ane)
+    return render_template('result.html', name=name, bg=bg, sex=sex, age=age,bp=bp, result=result, color=color, status=status, sg=sg,al=al,su=su,bgr=bgr,bu=bu,sc=sc,sod=sod,pot=pot,hemo=hemo,rbc=rbc,pc=pc,pcc=pcc,ba=ba,wc=wc,htn=htn,dm=dm,cad=cad,appet=appet,pe=pe,ane=ane,  testing_time=  testing_time)
 
 
 
