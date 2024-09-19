@@ -9,7 +9,7 @@
     <style>
         /* Body styling */
         body {
-            background-image: url('https://nephrology-md.com/wp-content/uploads/2020/04/healthcare-technology.jpg');
+            background-image: url('https://blog.labtag.com/wp-content/uploads/2021/10/0139-Diagnostic-AI-700x290px.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -122,24 +122,152 @@
     <div class="container">
         <h1>Kidney Disease Prediction System</h1>
         <form action="/predict" method="post">
-            <!-- Example input fields -->
+            <!-- Column 1 -->
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-            </div>
 
-            <div>
                 <label for="age">Age</label>
                 <input type="number" id="age" name="age" placeholder="Years" required>
-            </div>
 
-            <div>
                 <label for="bp">Blood Pressure (BP)</label>
                 <input type="number" id="bp" name="bp" placeholder="mm/Hg" required>
+
+                <label for="sg">Specific Gravity (SG)</label>
+                <input type="number" id="sg" name="sg" placeholder="1.005 to 1.025" step="0.005" required>
+
+                <label for="al">Albumin (AL)</label>
+                <input type="number" id="al" name="al" placeholder="0 to 5" step="1" required>
             </div>
 
-            <!-- Add more fields here... -->
+            <!-- Column 2 -->
+            <div>
+                <label for="bg">Blood Group</label>
+                <select id="bg" name="bg" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
 
+                <label for="su">Sugar (SU)</label>
+                <input type="number" id="su" name="su" placeholder="0 to 5" step="1" required>
+
+                <label for="bgr">Blood Glucose Random (BGR)</label>
+                <input type="number" id="bgr" name="bgr" placeholder="mgs/dl" required>
+
+                <label for="bu">Blood Urea (BU)</label>
+                <input type="number" id="bu" name="bu" placeholder="mgs/dl" required>
+
+                <label for="sc">Serum Creatinine (SC)</label>
+                <input type="number" id="sc" name="sc" placeholder="mgs/dl" required>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="sod">Sodium (SOD)</label>
+                <input type="number" id="sod" name="sod" placeholder="mEq/L" required>
+
+                <label for="pot">Potassium (POT)</label>
+                <input type="number" id="pot" name="pot" placeholder="mEq/L" required>
+
+                <label for="hemo">Hemoglobin (HEMO)</label>
+                <input type="number" id="hemo" name="hemo" placeholder="gms" required>
+
+                <label for="wc">White Blood Cell Count (WC)</label>
+                <input type="number" id="wc" name="wc" placeholder="cells/cumm" required>
+            </div>
+
+            <!-- Column 4 -->
+            <div>
+                <label for="rbc">Red Blood Cells (RBC)</label>
+                <select id="rbc" name="rbc" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">Abnormal</option>
+                    <option value="1">Normal</option>
+                </select>
+
+                <label for="pc">Pus Cell (PC)</label>
+                <select id="pc" name="pc" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">Abnormal</option>
+                    <option value="1">Normal</option>
+                </select>
+
+                <label for="pcc">Pus Cell Clumps (PCC)</label>
+                <select id="pcc" name="pcc" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">Absent</option>
+                    <option value="1">Present</option>
+                </select>
+
+                <label for="ba">Bacteria (BA)</label>
+                <select id="ba" name="ba" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">Absent</option>
+                    <option value="1">Present</option>
+                </select>
+
+                <label for="htn">Hypertension (HTN)</label>
+                <select id="htn" name="htn" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Column 5 -->
+            <div>
+                <label for="dm">Diabetes Mellitus (DM)</label>
+                <select id="dm" name="dm" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <label for="cad">Coronary Artery Disease (CAD)</label>
+                <select id="cad" name="cad" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <label for="appet">Appetite (Appet)</label>
+                <select id="appet" name="appet" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">Good</option>
+                    <option value="1">Poor</option>
+                </select>
+
+                <label for="pe">Pedal Edema (PE)</label>
+                <select id="pe" name="pe" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <label for="ane">Anemia (Ane)</label>
+                <select id="ane" name="ane" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Buttons -->
             <div class="btns">
                 <input type="submit" value="Predict">
                 <input type="reset" value="Reset">
@@ -148,7 +276,7 @@
     </div>
 
     <div class="footer">
-        <p>© 2024 | Rajib Kumar Halder</p>
+        <p>© 2024 | Sandip Darker</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
